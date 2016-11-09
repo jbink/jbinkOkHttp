@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         new sampleAsyncTask().execute("URL");
     }
 
-    private void attemptLogin(final String _url) {
+    private void sample(final String _url) {
         new AsyncTask<String, Void, Void>() {
             String response = null;
 
