@@ -38,7 +38,16 @@ public class ApiCall {
         Response response = client.newCall(request).execute();
         return response.body().string();
     }
-
+    //HTTPS_POST network request
+    public static String SSL_POST(OkHttpClient.Builder builder, String url, RequestBody body) throws IOException {
+        OkHttpClient client = builder.build();
+        Request request = new Request.Builder()
+                .url(url)
+                .post(body)
+                .build();
+        Response response = client.newCall(request).execute();
+        return response.body().string();
+    }
 
     public static OkHttpClient.Builder configureClient(final OkHttpClient.Builder builder) {
         final TrustManager[] certs = new TrustManager[]{new X509TrustManager() {
