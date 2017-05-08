@@ -39,6 +39,7 @@ public class ApiCall {
         return response.body().string();
     }
 
+
     public static OkHttpClient.Builder configureClient(final OkHttpClient.Builder builder) {
         final TrustManager[] certs = new TrustManager[]{new X509TrustManager() {
 
