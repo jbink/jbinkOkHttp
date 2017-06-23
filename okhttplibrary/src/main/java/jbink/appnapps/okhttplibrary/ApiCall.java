@@ -38,6 +38,15 @@ public class ApiCall {
         Response response = client.newCall(request).execute();
         return response.body().string();
     }
+    //POST network request
+    public static String PATCH(OkHttpClient client, String url, RequestBody body) throws IOException {
+        Request request = new Request.Builder()
+                .url(url)
+                .patch(body)
+                .build();
+        Response response = client.newCall(request).execute();
+        return response.body().string();
+    }
     //HTTPS_POST network request
     public static String SSL_POST(OkHttpClient.Builder builder, String url, RequestBody body) throws IOException {
         OkHttpClient client = builder.build();
